@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { SafeAreaView, Text, FlatList, ActivityIndicator,View } from 'react-native'
 import CategoryCard from '../components/CategoryCard'
 import useFecth from '../components/CustomHooks/useFetch/UseFetch'
+import Loading from '../components/Loading/Loading'
 
 const CategoryPage = ({navigation}) => {
 
@@ -17,8 +18,13 @@ const CategoryPage = ({navigation}) => {
     return <CategoryCard category={item} showCategoriesFoods={showCategoriesFoods} />
   }
   
+  if(loading) {
+    return <Loading />
+  }
+
   return (
     <SafeAreaView>
+      
       <View>
         { loading===true ?  <ActivityIndicator size="large"/>  :
           <FlatList

@@ -10,8 +10,11 @@ const Stack=createStackNavigator();
 function App (){
   return(
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Categories" component={CategoryPage} />
+      <Stack.Navigator screenOptions={{
+          headerTitleAlign:"center",
+          headerTitleStyle: {color: "#EBB530", fontSize: 20}
+          }}>
+        <Stack.Screen name="Categories" component={CategoryPage}  />
         <Stack.Screen name="Meals" component={Meals} />
         <Stack.Screen name="Details" component={Details} />
       </Stack.Navigator>

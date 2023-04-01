@@ -1,0 +1,11 @@
+import React from 'react'
+import Lottie from 'lottie-react-native';
+import {ActivityIndicator} from "react-native"
+
+const Loading = () => {
+  return (
+    <ActivityIndicator size="large" />
+  )
+}
+
+export default Loading
